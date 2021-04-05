@@ -37,7 +37,7 @@ class HomeController {
   }
 
   String btcPrice() {
-    return btcFormatter.format(_btcPrice);
+    return euroFormatter.format(_btcPrice);
   }
 
 }
