@@ -1,6 +1,6 @@
-# tomsarry
+# test
 
-A test project for Tom Sarry
+A test project.
 
 ## Getting Started
 
