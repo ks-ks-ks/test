@@ -3,14 +3,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class GradientBg extends StatelessWidget {
-
   final double height;
   final double width;
+
+  final Widget child;
 
   GradientBg({
     Key key,
     @required this.height,
     this.width,
+    this.child,
   }) : super(key: key);
 
   @override
@@ -25,11 +27,11 @@ class GradientBg extends StatelessWidget {
             Theme.of(context).accentColor,
           ],
           transform: GradientRotation(
-            pi/8,
+            pi / 8,
           ),
         ),
       ),
+      child: child,
     );
   }
-
 }

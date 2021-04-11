@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo for Tom Sarry',
-      /// TODO (tomsarry) : use theme data provided below
       theme: ThemeData(
         primaryColor: Color(0xFF5B8FE7),
         backgroundColor: Colors.white,
         accentColor: Color(0xFF84ABED),
+        fontFamily: 'Aleo',
       ),
       home: Home(title: 'Home'),
     );
