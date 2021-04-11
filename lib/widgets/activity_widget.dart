@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:tomsarry/widgets/drawer_wrapper_widget.dart';
 
 class ActivityWidget extends StatefulWidget {

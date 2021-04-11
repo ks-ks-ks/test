@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:tomsarry/models/home_controller.dart';
 import 'package:tomsarry/widgets/activity_widget.dart';
 import 'package:tomsarry/widgets/bitcoin_price_widget.dart';
 import 'package:tomsarry/widgets/footer_widget.dart';
-import 'package:tomsarry/models/home_controller.dart';
 import 'package:tomsarry/widgets/header_widget.dart';
 import 'package:tomsarry/widgets/portfolio_widget.dart';
 
