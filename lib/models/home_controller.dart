@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:intl/intl.dart';
 
 class HomeController {
-
   double _btcPrice;
   double _portfolioValueBtc;
   double _portfolioValueEur;
@@ -12,12 +11,14 @@ class HomeController {
     locale: 'en_US',
     symbol: '€',
     decimalDigits: 2,
+    customPattern: '#,###.### \u00a4',
   );
 
   final NumberFormat btcFormatter = NumberFormat.currency(
     locale: 'en_US',
     symbol: 'BTC',
     decimalDigits: 3,
+    customPattern: '#,###.### BTC',
   );
 
   HomeController() {
@@ -39,5 +40,4 @@ class HomeController {
   String btcPrice() {
     return euroFormatter.format(_btcPrice);
   }
-
 }
