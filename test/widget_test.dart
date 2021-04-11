@@ -1,30 +1,33 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:tomsarry/main.dart';
+import 'package:tomsarry/widgets/header_widget.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Header should shrink on scroll', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    Size extendedSize = tester.getSize(find.byType(HeaderWidget));
+    expect(extendedSize.height, equals(352));
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.drag(find.text('Send'), Offset(0, -4000));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    Size retractedSize = tester.getSize(find.byType(HeaderWidget));
+
+    expect(retractedSize.height, lessThan(352));
+  });
+
+  testWidgets('Send button should disappear on scroll',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+
+    expect(find.text('Send'), findsOneWidget);
+
+    await tester.drag(find.text('Send'), Offset(0, -4000));
+    await tester.pump();
+
+    expect(find.text('Send'), findsNothing);
   });
 }
